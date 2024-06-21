@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="JS" id="someUniqueId">
+        <createTable tableName="orders">
+            <column name="id" type="integer">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="paypal_order_id" type="varchar(32)" />
+            <column name="paypal_order_status" type="varchar(32)" />
+        </createTable>
+        <createSequence catalogName="cat"
+                        cycle="false"
+                        incrementBy="50"
+                        ordered="true"
+                        schemaName="public"
+                        sequenceName="user_seq"
+                        startValue="1" />
+    </changeSet>
+
+</databaseChangeLog>
